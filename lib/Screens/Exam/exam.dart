@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -8,7 +10,7 @@ import 'package:http/http.dart' as http;
 // import 'constants.dart';
 
 class Exam extends StatefulWidget {
-  Exam({Key key}) : super(key: key);
+  const Exam({super.key});
 
   @override
   State<Exam> createState() => _ExamState();
@@ -21,7 +23,7 @@ class _ExamState extends State<Exam> {
     final spref = await SharedPreferences.getInstance();
     print(spref.getString('reg_no').toString());
 
-    var url = Constants.x+ "exam_view.php";
+    var url = "${Constants.x}exam_view.php";
 
     http.Response response = await http.post(Uri.parse(url), body: {
       'department': spref.getString('department'),
@@ -42,17 +44,15 @@ class _ExamState extends State<Exam> {
       'q_id': (data[index]['id']).toString(),
       'reg_no': '123',
     });
-    var body = result.body;
 
-    print("result" + result.body);
+    print("result${result.body}");
     // var data = jsonDecode(body);
   }
 
   getStatus() async {
     final spref = await SharedPreferences.getInstance();
     print(spref.getString('reg_no').toString());
-    final res = await http.post(
-        Uri.parse('${Constants.x}exam_status.php'),
+    final res = await http.post(Uri.parse('${Constants.x}exam_status.php'),
         body: {'reg_no': spref.getString('reg_no')});
     print(jsonDecode(res.body));
     if ((jsonDecode(res.body))['message'] == 'attended') {
@@ -65,7 +65,6 @@ class _ExamState extends State<Exam> {
   var removeList = [];
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getStatus();
   }
@@ -85,129 +84,127 @@ class _ExamState extends State<Exam> {
               body: Column(
                 children: [
                   Expanded(
-                      flex: 9,
-                      child: !alreadyAttended
-                          ? ListView.builder(
-                              itemCount: (data as List).length,
-                              itemBuilder: (context, index) {
-                                final answer = TextEditingController();
-                                if (!removeList.contains(index)) {
-                                  return Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: SingleChildScrollView(
-                                      child: Container(
-                                        child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 280),
-                                                child: Text(
-                                                  '1. ${snap.data[0]['question']}',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                              Row(
+                    flex: 9,
+                    child: !alreadyAttended
+                        ? ListView.builder(
+                            itemCount: (data as List).length,
+                            itemBuilder: (context, index) {
+                              final answer = TextEditingController();
+                              if (!removeList.contains(index)) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 280),
+                                          child: Text(
+                                            '1. question',
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 20),
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.all(8),
+                                              child: Column(
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.all(8),
-                                                    child: Column(
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(8.0),
-                                                          child: Text(
-                                                              'a) ${snap.data[index]['op1']}'),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(8.0),
-                                                          child: Text(
-                                                              'b) ${snap.data[index]['op2']}'),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(8.0),
-                                                          child: Text(
-                                                              'c) ${snap.data[index]['op3']}'),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(8.0),
-                                                          child: Text(
-                                                              'd) ${snap.data[index]['op4']}'),
-                                                        ),
-                                                      ],
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text(
+                                                      'a) op1',
                                                     ),
                                                   ),
-                                                ],
-                                              ),
-                                              Column(
-                                                children: [
-                                                  TextField(
-                                                    controller: answer,
-                                                    decoration: InputDecoration(
-                                                        suffixIcon: IconButton(
-                                                          icon: Icon(Icons.send,
-                                                              color:
-                                                                  Colors.blue),
-                                                          onPressed: () {
-                                                            setState(() {});
-                                                            removeList
-                                                                .add(index);
-                                                            print(answer.text);
-                                                            sendAnswer(index,
-                                                                answer.text);
-                                                          },
-                                                        ),
-                                                        border:
-                                                            OutlineInputBorder()),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text('b) op2'),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text('c) op3'),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text('d) op4'),
                                                   ),
                                                 ],
                                               ),
-                                            ]),
-                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            TextField(
+                                              controller: answer,
+                                              decoration: InputDecoration(
+                                                suffixIcon: IconButton(
+                                                  icon: Icon(
+                                                    Icons.send,
+                                                    color: Colors.blue,
+                                                  ),
+                                                  onPressed: () {
+                                                    setState(() {});
+                                                    removeList.add(index);
+                                                    print(answer.text);
+                                                    sendAnswer(
+                                                      index,
+                                                      answer.text,
+                                                    );
+                                                  },
+                                                ),
+                                                border: OutlineInputBorder(),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
-                                  );
-                                } else {
-                                  return Container();
-                                }
-                              },
-                            )
-                          : Center(
-                              child: Text(
-                                "Already Attended...!",
-                                style: TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w400),
+                                  ),
+                                );
+                              } else {
+                                return Container();
+                              }
+                            },
+                          )
+                        : Center(
+                            child: Text(
+                              "Already Attended...!",
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
                               ),
-                            )),
+                            ),
+                          ),
+                  ),
                   Expanded(
-                      child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
                           onPressed: () {
                             getStatus();
                           },
-                          child: Text(
-                            'Finish',
-                          )),
-                    ],
-                  ))
+                          child: Text('Finish'),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             );

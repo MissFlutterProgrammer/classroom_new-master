@@ -1,13 +1,16 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import 'LoginPage.dart';
 
 class ProcessingRequest extends StatelessWidget {
+  const ProcessingRequest({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: Center(
@@ -33,7 +36,8 @@ class ProcessingRequest extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext context) => MyHomePage(),
+                            builder: (BuildContext context) =>
+                                MyHomePage(title: ''),
                           ),
                         );
                       },

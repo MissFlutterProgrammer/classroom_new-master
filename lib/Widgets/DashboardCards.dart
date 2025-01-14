@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class DashboardCard extends StatelessWidget {
@@ -5,8 +7,7 @@ class DashboardCard extends StatelessWidget {
 
   final String imgpath;
 
-  const DashboardCard({Key key, this.name, this.imgpath})
-      : super(key: key);
+  const DashboardCard({super.key, required this.name, required this.imgpath});
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
@@ -26,27 +27,24 @@ class DashboardCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Container(
-          child: Column(
-            children: [
-              Image.asset(
-                "assets/${imgpath}",
-                width: 60,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text(
-                  "${name}",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-            ],
+      child: Column(
+        children: [
+          Image.asset(
+            "assets/$imgpath",
+            width: 60,
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              name,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
+            ),
+          ),
+        ],
       ),
-      
     );
   }
 }

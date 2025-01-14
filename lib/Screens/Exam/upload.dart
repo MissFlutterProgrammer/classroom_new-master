@@ -1,24 +1,24 @@
+// ignore_for_file: deprecated_member_use, avoid_print
+
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:async/async.dart';
 import 'package:http/http.dart';
-import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 
 class ImageUpload {
   static Future<bool> upload({
-    File imageFile,
-    Uri url,
-    String department,
-    String sem,
+    required File imageFile,
+    required Uri url,
+    required String department,
+    required String sem,
     // required String name,
     // required DateTime date,
-     String name,
+    String? name,
   }) async {
-    var ret;
+    bool ret;
 
-    var stream = new ByteStream(DelegatingStream.typed(imageFile.openRead()));
+    var stream = ByteStream(DelegatingStream.typed(imageFile.openRead()));
     var length = await imageFile.length();
 
     var uri = url;
@@ -28,7 +28,7 @@ class ImageUpload {
         MultipartFile('f1', stream, length, filename: basename(imageFile.path));
     //contentType: new MediaType('image', 'png'));
     // request.fields['presc_name'] = name;
-    request.fields['name'] = name;
+    request.fields['name'] = name!;
     request.fields['department'] = department;
     request.fields['sem'] = sem;
     // request.fields['date'] = DateFormat('dd/MM/yyyy').format(date);

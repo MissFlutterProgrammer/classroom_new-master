@@ -1,12 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api, file_names
+
 import 'package:flutter/material.dart';
 
 class Bouncing extends StatefulWidget {
   final Widget child;
   final VoidCallback onPress;
 
-  Bouncing({@required this.child, Key key, this.onPress})
-      : assert(child != null),
-        super(key: key);
+  const Bouncing({required this.child, super.key, required this.onPress});
 
   @override
   _BouncingState createState() => _BouncingState();
@@ -14,8 +14,8 @@ class Bouncing extends StatefulWidget {
 
 class _BouncingState extends State<Bouncing>
     with SingleTickerProviderStateMixin {
-  double _scale;
-  AnimationController _controller;
+  late double _scale;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -42,15 +42,11 @@ class _BouncingState extends State<Bouncing>
     _scale = 1 - _controller.value;
     return Listener(
       onPointerDown: (PointerDownEvent event) {
-        if (widget.onPress != null) {
-          _controller.forward();
-        }
+        _controller.forward();
       },
       onPointerUp: (PointerUpEvent event) {
-        if (widget.onPress != null) {
-          _controller.reverse();
-          widget.onPress();
-        }
+        _controller.reverse();
+        widget.onPress();
       },
       child: Transform.scale(
         scale: _scale,

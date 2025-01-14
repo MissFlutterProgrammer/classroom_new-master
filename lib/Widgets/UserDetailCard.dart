@@ -1,41 +1,62 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+// ignore_for_file: non_constant_identifier_names, file_names, library_private_types_in_public_api, prefer_typing_uninitialized_variables, prefer_interpolation_to_compose_strings
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserDetailCard extends StatefulWidget {
+  const UserDetailCard({super.key});
+
   @override
   _UserDetailCardState createState() => _UserDetailCardState();
 }
 
 class _UserDetailCardState extends State<UserDetailCard>
     with SingleTickerProviderStateMixin {
-  Animation animation, delayedAnimation, muchDelayedAnimation, LeftCurve;
-  AnimationController animationController;
+  late Animation animation, delayedAnimation, muchDelayedAnimation, LeftCurve;
+  late AnimationController animationController;
 
   @override
   void initState() {
     getData();
-    // TODO: implement initState
+
     super.initState();
 
-    animationController =
-        AnimationController(duration: Duration(seconds: 3), vsync: this);
-    animation = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
-        parent: animationController, curve: Curves.fastOutSlowIn));
-
-    delayedAnimation = Tween(begin: 1.0, end: 0.0).animate(CurvedAnimation(
+    animationController = AnimationController(
+      duration: Duration(seconds: 3),
+      vsync: this,
+    );
+    animation = Tween(begin: -1.0, end: 0.0).animate(
+      CurvedAnimation(
         parent: animationController,
-        curve: Interval(0.2, 0.5, curve: Curves.fastOutSlowIn)));
+        curve: Curves.fastOutSlowIn,
+      ),
+    );
 
-    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
+    delayedAnimation = Tween(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(
         parent: animationController,
-        curve: Interval(0.3, 0.5, curve: Curves.fastOutSlowIn)));
+        curve: Interval(
+          0.2,
+          0.5,
+          curve: Curves.fastOutSlowIn,
+        ),
+      ),
+    );
+
+    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Interval(
+          0.3,
+          0.5,
+          curve: Curves.fastOutSlowIn,
+        ),
+      ),
+    );
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     animationController.dispose();
     super.dispose();
   }
@@ -60,7 +81,7 @@ class _UserDetailCardState extends State<UserDetailCard>
     final double height = MediaQuery.of(context).size.height;
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return Padding(
           padding: const EdgeInsets.fromLTRB(10.0, 5, 10, 3),
           child: Container(

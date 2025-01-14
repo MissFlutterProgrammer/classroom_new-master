@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:flutter_downloader/flutter_downloader.dart';
 // import 'package:google_sign_in/google_sign_in.dart';
-import 'package:school_management/Screens/Leave_Apply/Leave_apply.dart';
 import 'package:school_management/Screens/LoginPage.dart';
-import 'package:school_management/Screens/SpleashScreen.dart';
-import 'package:school_management/Screens/splash_screen.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -16,10 +13,11 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
-  @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   }
 
   @override
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyHomePage(title: ''),
     );
   }
 }

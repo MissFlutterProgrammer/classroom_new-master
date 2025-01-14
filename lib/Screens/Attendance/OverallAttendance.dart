@@ -1,13 +1,15 @@
-import 'dart:convert';
+// ignore_for_file: file_names, library_private_types_in_public_api, prefer_typing_uninitialized_variables, non_constant_identifier_names, avoid_print
 
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:school_management/Widgets/Attendance/OverAllAttendanceCard.dart';
-import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OverallAttendance extends StatefulWidget {
+  const OverallAttendance({super.key});
+
   @override
   _OverallAttendanceState createState() => _OverallAttendanceState();
 }
@@ -20,7 +22,7 @@ class _OverallAttendanceState extends State<OverallAttendance> {
     final spref = await SharedPreferences.getInstance();
     print(spref.getString('reg_no').toString());
 
-    var url = Constants.x+"attendance_history.php";
+    var url = "${Constants.x}attendance_history.php";
     final response = await post(Uri.parse(url), body: {
       'reg_no': spref.getString('reg_no'),
       // 'reg_no': reg_no,
@@ -34,10 +36,7 @@ class _OverallAttendanceState extends State<OverallAttendance> {
     }
   }
 
-  @override
-  void initState() {
-    getData();
-  }
+  // @overrided
 
   @override
   Widget build(BuildContext context) {

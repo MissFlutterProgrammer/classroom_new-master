@@ -5,6 +5,8 @@
 //   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 //   final GoogleSignIn _googlesignin = GoogleSignIn();
 
+// ignore_for_file: file_names
+
 //   void googlesignin() async {
 //     final GoogleSignInAccount googleuser = await _googlesignin.signIn();
 //     final GoogleSignInAuthentication authentication =

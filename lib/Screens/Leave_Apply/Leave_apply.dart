@@ -1,76 +1,73 @@
-import 'dart:convert';
+// ignore_for_file: file_names, library_private_types_in_public_api, non_constant_identifier_names, avoid_print, use_build_context_synchronously, prefer_typing_uninitialized_variables
 
-import 'package:date_time_picker/date_time_picker.dart';
-import 'package:dropdown_search/dropdown_search.dart';
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:school_management/Widgets/AppBar.dart';
 import 'package:school_management/Widgets/BouncingButton.dart';
-import 'package:school_management/Widgets/LeaveApply/LeaveHistoryCard.dart';
-import 'package:school_management/Widgets/LeaveApply/datepicker.dart';
 import 'package:school_management/Widgets/MainDrawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LeaveApply extends StatefulWidget {
+  const LeaveApply({super.key});
+
   @override
   _LeaveApplyState createState() => _LeaveApplyState();
 }
 
 class _LeaveApplyState extends State<LeaveApply>
     with SingleTickerProviderStateMixin {
-  Animation animation, delayedAnimation, muchDelayedAnimation, LeftCurve;
-  AnimationController animationController;
+  late Animation animation, delayedAnimation, muchDelayedAnimation, LeftCurve;
+  late AnimationController animationController;
   final searchFieldController = TextEditingController();
-
-  TextEditingController _applyleavecontroller;
-  String _applyleavevalueChanged = '';
-  String _applyleavevalueToValidate = '';
-  String _applyleavevalueSaved = '';
-
-  TextEditingController _fromcontroller;
-  String _fromvalueChanged = '';
-  String _fromvalueToValidate = '';
-  String _fromvalueSaved = '';
-
-  TextEditingController _tocontroller;
-  String _tovalueChanged = '';
-  String _tovalueToValidate = '';
-  String _tovalueSaved = '';
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     //SystemChrome.setEnabledSystemUIOverlays([]);
-    _applyleavecontroller =
-        TextEditingController(text: DateTime.now().toString());
-    _fromcontroller = TextEditingController(text: DateTime.now().toString());
-    _tocontroller = TextEditingController(text: DateTime.now().toString());
 
-    animationController =
-        AnimationController(duration: Duration(seconds: 3), vsync: this);
-    animation = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
-        parent: animationController, curve: Curves.fastOutSlowIn));
-
-    delayedAnimation = Tween(begin: 1.0, end: 0.0).animate(CurvedAnimation(
+    animationController = AnimationController(
+      duration: Duration(seconds: 3),
+      vsync: this,
+    );
+    animation = Tween(begin: -1.0, end: 0.0).animate(
+      CurvedAnimation(
         parent: animationController,
-        curve: Interval(0.2, 0.5, curve: Curves.fastOutSlowIn)));
+        curve: Curves.fastOutSlowIn,
+      ),
+    );
 
-    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
+    delayedAnimation = Tween(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(
         parent: animationController,
-        curve: Interval(0.3, 0.5, curve: Curves.fastOutSlowIn)));
+        curve: Interval(
+          0.2,
+          0.5,
+          curve: Curves.fastOutSlowIn,
+        ),
+      ),
+    );
+
+    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Interval(
+          0.3,
+          0.5,
+          curve: Curves.fastOutSlowIn,
+        ),
+      ),
+    );
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     animationController.dispose();
     super.dispose();
   }
 
-  final GlobalKey<FormState> _formkey = new GlobalKey<FormState>();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   final feedback = TextEditingController();
 
@@ -104,22 +101,19 @@ class _LeaveApplyState extends State<LeaveApply>
     animationController.forward();
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
-    final GlobalKey<ScaffoldState> _scaffoldKey =
-        new GlobalKey<ScaffoldState>();
 
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
-        final GlobalKey<ScaffoldState> _scaffoldKey =
-            new GlobalKey<ScaffoldState>();
+      builder: (BuildContext context, Widget? child) {
+        final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
         return Scaffold(
-          key: _scaffoldKey,
+          key: scaffoldKey,
           appBar: CommonAppBar(
             menuenabled: true,
             notificationenabled: false,
             title: "Feedback",
             ontap: () {
-              _scaffoldKey.currentState.openDrawer();
+              scaffoldKey.currentState!.openDrawer();
             },
           ),
           drawer: Drawer(
@@ -174,9 +168,7 @@ class _LeaveApplyState extends State<LeaveApply>
                       transform: Matrix4.translationValues(
                           delayedAnimation.value * width, 0, 0),
                       child: Padding(
-                        padding: EdgeInsets.only(
-                          top: 13,
-                        ),
+                        padding: EdgeInsets.only(top: 13),
                         child: Container(
                           // height: height * 0.06,
                           height: height * 0.25,
@@ -196,8 +188,10 @@ class _LeaveApplyState extends State<LeaveApply>
                                   ? IconButton(
                                       icon: Icon(Icons.clear),
                                       onPressed: () => WidgetsBinding.instance
-                                          .addPostFrameCallback((_) =>
-                                              searchFieldController.clear()))
+                                          .addPostFrameCallback(
+                                        (_) => searchFieldController.clear(),
+                                      ),
+                                    )
                                   : null,
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.all(7),
@@ -241,9 +235,7 @@ class _LeaveApplyState extends State<LeaveApply>
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 7,
-                    ),
+                    SizedBox(height: 7),
                     Transform(
                       transform: Matrix4.translationValues(
                           muchDelayedAnimation.value * width, 0, 0),
@@ -259,9 +251,7 @@ class _LeaveApplyState extends State<LeaveApply>
                       ),
                     ),
 
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: 10),
                   ],
                 ),
               ),

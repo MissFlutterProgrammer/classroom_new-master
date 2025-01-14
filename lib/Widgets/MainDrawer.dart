@@ -1,5 +1,6 @@
+// ignore_for_file: file_names, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
-import 'package:school_management/Screens/Attendance/Attendance.dart';
 import 'package:school_management/Screens/Exam/Exam_Rseult.dart';
 import 'package:school_management/Screens/Exam/profile.dart';
 import 'package:school_management/Screens/Exam/timetable.dart';
@@ -10,11 +11,10 @@ import 'package:school_management/Screens/materials.dart';
 import 'package:school_management/Widgets/meetings.dart';
 import 'package:school_management/Widgets/DrawerListTile.dart';
 import 'package:school_management/Widgets/Exams/internal.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import 'Exams/teachers.dart';
 
 class MainDrawer extends StatefulWidget {
+  const MainDrawer({super.key});
+
   @override
   _MainDrawerState createState() => _MainDrawerState();
 }
@@ -90,10 +90,11 @@ class _MainDrawerState extends State<MainDrawer> {
             name: "Online Class",
             ontap: () async {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => Meetings(),
-                  ));
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => Meetings(),
+                ),
+              );
             }),
 
         DrawerListTile(
@@ -107,7 +108,7 @@ class _MainDrawerState extends State<MainDrawer> {
                 ),
               );
             }),
-            DrawerListTile(
+        DrawerListTile(
             imgpath: "book.png",
             name: "Study Materials",
             ontap: () {
@@ -139,7 +140,7 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => MyHomePage(),
+                  builder: (BuildContext context) => MyHomePage(title: ''),
                 ),
               );
             }),

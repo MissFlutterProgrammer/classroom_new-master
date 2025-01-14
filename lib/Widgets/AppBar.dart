@@ -1,23 +1,25 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
-class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
+class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool menuenabled;
   final bool notificationenabled;
   final Function ontap;
   const CommonAppBar({
-    Key key,
-    this.title,
-    this.menuenabled,
-    this.notificationenabled,
-    this.ontap,
-  }) : super(key: key);
+    super.key,
+    required this.title,
+    required this.menuenabled,
+    required this.notificationenabled,
+    required this.ontap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        "${title}",
+        title,
         style: TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
@@ -26,7 +28,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
       leading: menuenabled == true
           ? IconButton(
               color: Colors.black,
-              onPressed: ontap,
+              onPressed: () {},
               icon: Icon(
                 Icons.menu,
               ),
@@ -41,9 +43,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
                   width: 35,
                 ),
               )
-            : SizedBox(
-                width: 1,
-              ),
+            : SizedBox(width: 1),
       ],
       centerTitle: true,
       backgroundColor: Colors.transparent,
@@ -52,6 +52,5 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(50);
 }

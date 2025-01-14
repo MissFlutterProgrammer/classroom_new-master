@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class DrawerListTile extends StatelessWidget {
@@ -5,13 +7,18 @@ class DrawerListTile extends StatelessWidget {
   final String imgpath;
   final Function ontap;
 
-  const DrawerListTile({Key key, this.name, this.imgpath, this.ontap}) : super(key: key);
+  const DrawerListTile({
+    super.key,
+    required this.name,
+    required this.imgpath,
+    required this.ontap,
+  });
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap:ontap,
+      onTap: () {},
       leading: Image.asset(
-        "assets/${imgpath}",
+        "assets/$imgpath",
         height: 30,
       ),
       contentPadding: EdgeInsets.only(
@@ -20,7 +27,7 @@ class DrawerListTile extends StatelessWidget {
         bottom: 5,
       ),
       title: Text(
-        "${name}",
+        name,
         style: TextStyle(
           fontWeight: FontWeight.bold,
         ),

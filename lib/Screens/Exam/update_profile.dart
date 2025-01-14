@@ -1,12 +1,13 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables, non_constant_identifier_names, avoid_print
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Update extends StatelessWidget {
-  Update({Key key}) : super(key: key);
+  Update({super.key});
 
   var reg_no;
   var email;
@@ -16,27 +17,26 @@ class Update extends StatelessWidget {
 
   getData() async {
     final pref = await SharedPreferences.getInstance();
-    nameController.text = pref.getString('name');
-    departmentController.text = pref.getString('department');
-    emailController.text = pref.getString('email');
-    mobileController.text = pref.getString('mobile');
+    nameController.text = pref.getString('name')!;
+    departmentController.text = pref.getString('department')!;
+    emailController.text = pref.getString('email')!;
+    mobileController.text = pref.getString('mobile')!;
     reg_no = pref.getString('reg_no');
   }
 
   sendData() async {
-    http.Response result = await http.post(
-        Uri.parse("${Constants.x}update_student.php"),
-        body: {
-          'reg_no': reg_no,
-          'name': nameController.text,
-          'department': departmentController.text,
-          'email': emailController.text,
-          'mobile': mobileController.text,
-        });
+    http.Response result =
+        await http.post(Uri.parse("${Constants.x}update_student.php"), body: {
+      'reg_no': reg_no,
+      'name': nameController.text,
+      'department': departmentController.text,
+      'email': emailController.text,
+      'mobile': mobileController.text,
+    });
     var body = result.body;
 
     print(body);
-    var data = jsonDecode(body);
+    jsonDecode(body);
   }
 
   final nameController = TextEditingController();
@@ -83,17 +83,21 @@ class Update extends StatelessWidget {
                           // title: Text(' Name :'),
                           // trailing: Text(snap.data['name']),
                           TextField(
-                              controller: nameController,
-                              decoration: InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  label: Text('Name'))),
+                            controller: nameController,
+                            decoration: InputDecoration(
+                              border: UnderlineInputBorder(),
+                              label: Text('Name'),
+                            ),
+                          ),
 
                           Divider(),
                           TextField(
-                              controller: mobileController,
-                              decoration: InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  label: Text('Mobile'))),
+                            controller: mobileController,
+                            decoration: InputDecoration(
+                              border: UnderlineInputBorder(),
+                              label: Text('Mobile'),
+                            ),
+                          ),
                           // title: Text(' Email :'),
                           // trailing: Text(snap.data['email']),
 
@@ -108,11 +112,12 @@ class Update extends StatelessWidget {
 
                           // Divider(),
                           TextField(
-                              controller: emailController,
-                              decoration: InputDecoration(
-                                  border: UnderlineInputBorder(),
-                                  label: Text(
-                                      'Email'))), // title: Text('Mobile No :'),
+                            controller: emailController,
+                            decoration: InputDecoration(
+                              border: UnderlineInputBorder(),
+                              label: Text('Email'),
+                            ),
+                          ), // title: Text('Mobile No :'),
                           // trailing: Text(snap.data['mobile']),
 
                           Divider(),
