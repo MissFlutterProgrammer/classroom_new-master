@@ -50,7 +50,7 @@ class _AttendanceState extends State<Attendance>
                       unselectedLabelColor: Colors.black26,
                       indicatorColor: Colors.black,
                       tabs: [
-                        // Tab(text: 'Today'),
+                        Tab(text: 'Today'),
                         Tab(text: 'Overall'),
                       ],
                     ),

@@ -38,6 +38,7 @@ dependencies:
   path: any
   # flutter_pdfview: ^1.2.1
   # flutter_downloader: ^1.8.0+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

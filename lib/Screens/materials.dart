@@ -91,7 +91,9 @@ class Materials extends StatelessWidget {
                         ),
                         subtitle: Text(
                           (snap.data as dynamic)[index]['file'],
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     );

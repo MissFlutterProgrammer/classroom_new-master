@@ -205,7 +205,9 @@ class _MyHomePageState extends State<MyHomePage>
       onSaved: (value) => _password = value!,
       decoration: InputDecoration(
         suffixIcon: IconButton(
-          icon: Icon(_isPasswordVisible ? Icons.lock_open : Icons.lock),
+          icon: Icon(
+            _isPasswordVisible ? Icons.lock_open : Icons.lock,
+          ),
           onPressed: () {
             setState(() => _isPasswordVisible = !_isPasswordVisible);
           },

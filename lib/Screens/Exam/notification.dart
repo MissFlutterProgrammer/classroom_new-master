@@ -60,7 +60,7 @@ class _NotificationsState extends State<Notifications> {
                   return Center(child: CircularProgressIndicator());
                 } else {
                   SizedBox(
-                    height: 20.0,
+                    height: 20,
                   );
                 }
                 return ListView.builder(

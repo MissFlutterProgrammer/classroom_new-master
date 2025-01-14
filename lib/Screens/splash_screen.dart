@@ -11,7 +11,9 @@ class SplashScreen extends StatelessWidget {
       body: Center(
         child: Text(
           'Classroom Management',
-          style: TextStyle(fontSize: 40),
+          style: TextStyle(
+            fontSize: 40,
+          ),
         ),
       ),
     );

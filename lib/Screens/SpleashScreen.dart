@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, library_private_types_in_public_api
 
 import 'dart:async';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:school_management/Screens/LoginPage.dart';

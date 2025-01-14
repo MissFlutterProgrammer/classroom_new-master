@@ -75,11 +75,15 @@ class _ExamState extends State<Exam> {
         builder: (context, snap) {
           print('data: $data');
           if (snap.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           } else {
             print('att $alreadyAttended');
             return Scaffold(
-              appBar: AppBar(title: Text('Exam')),
+              appBar: AppBar(
+                title: Text('Exam'),
+              ),
               body: Column(
                 children: [
                   Expanded(
