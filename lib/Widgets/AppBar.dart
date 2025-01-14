@@ -43,11 +43,11 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
                   width: 35,
                 ),
               )
-            : SizedBox(width: 1),
+            : SizedBox(width: 8),
       ],
       centerTitle: true,
       backgroundColor: Colors.transparent,
-      elevation: 0.0,
+      elevation: 16,
     );
   }
 
