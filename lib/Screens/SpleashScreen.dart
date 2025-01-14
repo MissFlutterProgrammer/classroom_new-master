@@ -15,12 +15,6 @@ class SpleashScreen extends StatefulWidget {
 
 class _SpleashScreenState extends State<SpleashScreen> {
   @override
-  // void initState() {
-  //   // Firebase.initializeApp();
-
-  //   Timer(Duration(seconds: 8), start);
-  // }
-  @override
   void initState() {
     super.initState();
     Timer(Duration(seconds: 8), start);

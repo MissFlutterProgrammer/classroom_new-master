@@ -32,8 +32,10 @@ class _ExamResultState extends State<ExamResult>
     getData();
     //SystemChrome.setEnabledSystemUIOverlays([]);
 
-    animationController =
-        AnimationController(duration: Duration(seconds: 3), vsync: this);
+    animationController = AnimationController(
+      duration: Duration(seconds: 3),
+      vsync: this,
+    );
     animation = Tween(begin: -1.0, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
@@ -44,7 +46,11 @@ class _ExamResultState extends State<ExamResult>
     delayedAnimation = Tween(begin: 1.0, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(0.2, 0.5, curve: Curves.fastOutSlowIn),
+        curve: Interval(
+          0.2,
+          0.5,
+          curve: Curves.fastOutSlowIn,
+        ),
       ),
     );
 
@@ -141,8 +147,8 @@ class _ExamResultState extends State<ExamResult>
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(
-                        top: 8.0,
-                        bottom: 8.0,
+                        top: 8,
+                        bottom: 8,
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -162,7 +168,7 @@ class _ExamResultState extends State<ExamResult>
                             transform: Matrix4.translationValues(
                                 delayedAnimation.value * width, 0, 0),
                             child: Padding(
-                              padding: const EdgeInsets.all(4.0),
+                              padding: const EdgeInsets.all(4),
                               child: Text(
                                 "date : 15/12/2020",
                                 style: TextStyle(
@@ -214,9 +220,7 @@ class _ExamResultState extends State<ExamResult>
                             } else {
                               print('data: ${snap.data}');
                             }
-                            // SizedBox(
-                            //   height: 20.0,
-                            // );
+                            // SizedBox(height: 20);
                             return InkWell(
                               child: SubjectCard(
                                 subjectname: 'Subject subject,name',
@@ -366,7 +370,7 @@ class _ExamResultState extends State<ExamResult>
                     //                   ),
                     //                 ]),
                     //             child: Padding(
-                    //               padding: const EdgeInsets.all(8.0),
+                    //               padding: const EdgeInsets.all(8),
                     //               child: Text(
                     //                 "Save",
                     //                 style: TextStyle(
@@ -394,7 +398,7 @@ class _ExamResultState extends State<ExamResult>
                     //                   ),
                     //                 ]),
                     //             child: Padding(
-                    //               padding: const EdgeInsets.all(8.0),
+                    //               padding: const EdgeInsets.all(8),
                     //               child: Text(
                     //                 "Share",
                     //                 style: TextStyle(

@@ -15,7 +15,7 @@ class ProcessingRequest extends StatelessWidget {
         width: double.infinity,
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20),
             child: RichText(
               text: TextSpan(
                 children: [

@@ -25,14 +25,14 @@ class _UserDetailCardState extends State<UserDetailCard>
       duration: Duration(seconds: 3),
       vsync: this,
     );
-    animation = Tween(begin: -1.0, end: 0.0).animate(
+    animation = Tween(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Curves.fastOutSlowIn,
       ),
     );
 
-    delayedAnimation = Tween(begin: 1.0, end: 0.0).animate(
+    delayedAnimation = Tween(begin: 1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
@@ -43,7 +43,7 @@ class _UserDetailCardState extends State<UserDetailCard>
       ),
     );
 
-    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+    muchDelayedAnimation = Tween(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
@@ -83,11 +83,11 @@ class _UserDetailCardState extends State<UserDetailCard>
       animation: animationController,
       builder: (BuildContext context, Widget? child) {
         return Padding(
-          padding: const EdgeInsets.fromLTRB(10.0, 5, 10, 3),
+          padding: const EdgeInsets.fromLTRB(10, 5, 10, 3),
           child: Container(
             alignment: Alignment(0, 0),
             child: Padding(
-              padding: const EdgeInsets.only(top: 10.0, right: 0.0),
+              padding: const EdgeInsets.only(top: 10, right: 0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.blue,
@@ -98,7 +98,7 @@ class _UserDetailCardState extends State<UserDetailCard>
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(15.0, 10, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(15, 10, 0, 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -124,15 +124,14 @@ class _UserDetailCardState extends State<UserDetailCard>
                                     transform: Matrix4.translationValues(
                                         delayedAnimation.value * width, 0, 0),
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 15.0),
+                                      padding: const EdgeInsets.only(left: 15),
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsets.only(top: 8.0),
+                                                const EdgeInsets.only(top: 8),
                                             child: Container(
                                               padding: EdgeInsets.all(5),
                                               decoration: BoxDecoration(
@@ -151,8 +150,8 @@ class _UserDetailCardState extends State<UserDetailCard>
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 10.0),
+                                            padding:
+                                                const EdgeInsets.only(top: 10),
                                             child: Text(
                                               name,
                                               style: TextStyle(
@@ -164,7 +163,7 @@ class _UserDetailCardState extends State<UserDetailCard>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsets.only(top: 8.0),
+                                                const EdgeInsets.only(top: 8),
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
@@ -177,9 +176,7 @@ class _UserDetailCardState extends State<UserDetailCard>
                                                     color: Colors.white,
                                                   ),
                                                 ),
-                                                SizedBox(
-                                                  width: 50,
-                                                ),
+                                                SizedBox(width: 50),
                                                 Text(
                                                   "Semester   " + sem,
                                                   style: TextStyle(

@@ -1,12 +1,8 @@
 // import 'dart:html';
-
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-// import 'package:heartbeat/constants/dummy_lists.dart';
-// import 'package:heartbeat/providers/db_helper.dart';
 import 'package:photo_view/photo_view.dart';
-// import 'package:provider/provider.dart';
 
 class ImageViewScreen extends StatelessWidget {
   ImageViewScreen(this.img, {super.key});

@@ -50,7 +50,7 @@ class _TimetableState extends State<Timetable> {
           //         leading: CircleAvatar(
           //           backgroundColor: Colors.white,
           //           backgroundImage: NetworkImage(
-          //               "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png"),
+          //               "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png",),
           //         ),
           //         title:
           FutureBuilder(
@@ -72,9 +72,7 @@ class _TimetableState extends State<Timetable> {
                         children: [
                           Text(
                             'Forenoon',
-                            style: TextStyle(
-                              fontSize: 25,
-                            ),
+                            style: TextStyle(fontSize: 25),
                           ),
                           SizedBox(height: 20),
                           Text(

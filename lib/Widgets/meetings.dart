@@ -35,7 +35,9 @@ class Meetings extends StatelessWidget {
           future: getData(),
           builder: (context, snap) {
             if (snap.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             } else if (snap.data == null) {
               return Center(
                 child: Text('No data'),
@@ -61,7 +63,9 @@ class Meetings extends StatelessWidget {
                         ),
                         subtitle: Text(
                           (snap.data as dynamic)[index]['link'],
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     );

@@ -9,7 +9,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:school_management/Screens/home.dart';
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:school_management/Widgets/BouncingButton.dart';
-
 import 'RequestLogin.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -45,28 +44,28 @@ class _MyHomePageState extends State<MyHomePage>
       vsync: this,
     );
 
-    _animation = Tween<double>(begin: -1.0, end: 0.0).animate(
+    _animation = Tween<double>(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: Curves.fastOutSlowIn,
       ),
     );
 
-    _delayedAnimation = Tween<double>(begin: -1.0, end: 0.0).animate(
+    _delayedAnimation = Tween<double>(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: const Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
       ),
     );
 
-    _muchDelayedAnimation = Tween<double>(begin: -1.0, end: 0.0).animate(
+    _muchDelayedAnimation = Tween<double>(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: const Interval(0.8, 1.0, curve: Curves.fastOutSlowIn),
       ),
     );
 
-    _leftCurveAnimation = Tween<double>(begin: -1.0, end: 0.0).animate(
+    _leftCurveAnimation = Tween<double>(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: const Interval(0.5, 1.0, curve: Curves.easeInOut),
@@ -106,10 +105,9 @@ class _MyHomePageState extends State<MyHomePage>
 
   Widget _buildHeader(double width) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: 20),
       child: Transform(
-        transform:
-            Matrix4.translationValues(_animation.value * width, 0.0, 0.0),
+        transform: Matrix4.translationValues(_animation.value * width, 0, 0),
         child: Center(
           child: Stack(
             children: [
@@ -119,18 +117,18 @@ class _MyHomePageState extends State<MyHomePage>
                   'Online',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 40.0,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.fromLTRB(40.0, 80.0, 0, 0),
+                padding: EdgeInsets.fromLTRB(40, 80, 0, 0),
                 child: Text(
                   'Classroom',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 40.0,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -144,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   Widget _buildLoginForm(double width) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
+      padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
       child: Transform(
         transform:
             Matrix4.translationValues(_leftCurveAnimation.value * width, 0, 0),
@@ -155,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage>
             child: Column(
               children: [
                 _buildUsernameField(),
-                const SizedBox(height: 20.0),
+                const SizedBox(height: 20),
                 _buildPasswordField(),
               ],
             ),
@@ -229,14 +227,14 @@ class _MyHomePageState extends State<MyHomePage>
 
   Widget _buildForgotPasswordButton(double width) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
+      padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
       child: Transform(
         transform:
             Matrix4.translationValues(_delayedAnimation.value * width, 0, 0),
         child: Container(
           alignment: Alignment.centerRight,
           child: Padding(
-            padding: const EdgeInsets.only(top: 10.0, right: 20.0),
+            padding: const EdgeInsets.only(top: 10, right: 20),
             child: Bouncing(
               onPress: () {
                 Navigator.push(
@@ -262,7 +260,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   Widget _buildLoginButton(double width) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20.0, 5, 20.0, 5),
+      padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
       child: Transform(
         transform: Matrix4.translationValues(
             _muchDelayedAnimation.value * width, 0, 0),
@@ -315,7 +313,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   Widget _buildRequestLoginButton(double width) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20.0, 5, 20.0, 5),
+      padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
       child: Transform(
         transform: Matrix4.translationValues(
             _muchDelayedAnimation.value * width, 0, 0),

@@ -58,7 +58,7 @@ class SubjectCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
+                      padding: const EdgeInsets.only(bottom: 8),
                       child: Text(
                         subjectname,
                         style: TextStyle(
@@ -91,7 +91,7 @@ class SubjectCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Padding(
-                //   padding: const EdgeInsets.only(bottom: 8.0),
+                //   padding: const EdgeInsets.only(bottom: 8),
                 //   child: Text(
                 //     "${date}",
                 //     style: TextStyle(
@@ -100,7 +100,7 @@ class SubjectCard extends StatelessWidget {
                 //   ),
                 // ),
                 // Padding(
-                //   padding: const EdgeInsets.only(bottom: 8.0),
+                //   padding: const EdgeInsets.only(bottom: 8),
                 //   child: Text(
                 //     "${time}",
                 //     style: TextStyle(

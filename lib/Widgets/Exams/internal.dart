@@ -47,7 +47,9 @@ class Internal extends StatelessWidget {
           builder: (context, snap) {
             print('data: $data');
             if (snap.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             } else {
               return Center(
                 child: Card(

@@ -105,7 +105,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                           width: 300,
                           height: 500,
                           child: Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.all(20),
                             child: Column(
                               children: [
                                 Card(

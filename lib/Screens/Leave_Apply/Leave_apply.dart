@@ -125,7 +125,7 @@ class _LeaveApplyState extends State<LeaveApply>
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 15.0,
+                  horizontal: 15,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -221,7 +221,7 @@ class _LeaveApplyState extends State<LeaveApply>
                           ),
                           child: Center(
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8),
                               child: Text(
                                 "Send",
                                 style: TextStyle(
@@ -246,8 +246,8 @@ class _LeaveApplyState extends State<LeaveApply>
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                        top: 8.0,
-                        bottom: 8.0,
+                        top: 8,
+                        bottom: 8,
                       ),
                     ),
 

@@ -68,12 +68,16 @@ class _NotificationsState extends State<Notifications> {
                   itemBuilder: (context, index) {
                     return Card(
                       child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            backgroundImage: NetworkImage(
-                                "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png"),
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: NetworkImage(
+                            "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png",
                           ),
-                          title: Text(data[index]['message'])),
+                        ),
+                        title: Text(
+                          data[index]['message'],
+                        ),
+                      ),
                     );
                   },
                 );

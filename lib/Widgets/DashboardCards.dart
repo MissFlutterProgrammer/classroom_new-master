@@ -34,7 +34,7 @@ class DashboardCard extends StatelessWidget {
             width: 60,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.only(top: 8),
             child: Text(
               name,
               style: TextStyle(

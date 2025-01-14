@@ -31,14 +31,14 @@ class _RequestLoginState extends State<RequestLogin>
       duration: Duration(seconds: 3),
       vsync: this,
     );
-    animation = Tween(begin: -1.0, end: 0.0).animate(
+    animation = Tween(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Curves.fastOutSlowIn,
       ),
     );
 
-    delayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+    delayedAnimation = Tween(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
@@ -49,7 +49,7 @@ class _RequestLoginState extends State<RequestLogin>
       ),
     );
 
-    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+    muchDelayedAnimation = Tween(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
@@ -60,7 +60,7 @@ class _RequestLoginState extends State<RequestLogin>
       ),
     );
 
-    LeftCurve = Tween(begin: -1.0, end: 0.0).animate(
+    LeftCurve = Tween(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
@@ -101,10 +101,10 @@ class _RequestLoginState extends State<RequestLogin>
           body: ListView(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top: 30.0),
+                padding: const EdgeInsets.only(top: 30),
                 child: Transform(
-                  transform: Matrix4.translationValues(
-                      animation.value * width, 0.0, 0.0),
+                  transform:
+                      Matrix4.translationValues(animation.value * width, 0, 0),
                   child: Center(
                     child: Stack(
                       children: <Widget>[
@@ -112,7 +112,7 @@ class _RequestLoginState extends State<RequestLogin>
                           'Register',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 40.0,
+                              fontSize: 40,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -120,403 +120,403 @@ class _RequestLoginState extends State<RequestLogin>
                   ),
                 ),
               ),
-              SizedBox(height: 30.0),
+              SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
+                padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
                 child: Transform(
                   transform:
                       Matrix4.translationValues(LeftCurve.value * width, 0, 0),
                   child: Column(
                     children: <Widget>[
                       Form(
-                          key: _formkey,
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                validator: (value) {
-                                  RegExp nameRegExp = RegExp('[a-zA-Z]');
-                                  if (value!.isEmpty) {
-                                    return 'You Must enter your Name!';
-                                  } else if (nameRegExp.hasMatch(value)) {
-                                    return null;
-                                  } else {
-                                    return 'Enter Vaild name';
-                                  }
-                                },
-                                onSaved: (val) {
-                                  name = val!;
-                                },
-                                keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
-                                  labelText: 'Name',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                validator: (value) {
-                                  RegExp nameRegExp = RegExp('[0-9]');
-                                  if (value!.isEmpty) {
-                                    return 'You Must enter Register Number!';
-                                  } else if (nameRegExp.hasMatch(value)) {
-                                    return null;
-                                  } else {
-                                    return 'Enter Vaild register number';
-                                  }
-                                },
-                                onSaved: (val) {
-                                  reg_no = val!;
-                                },
-                                keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
-                                  labelText: 'Register Number',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                validator: (value) {
-                                  RegExp nameRegExp = RegExp('[0-9]');
-                                  if (value!.isEmpty) {
-                                    return 'You Must enter Roll number!';
-                                  } else if (nameRegExp.hasMatch(value)) {
-                                    return null;
-                                  } else {
-                                    return 'Enter Vaild rollno';
-                                  }
-                                },
-                                onSaved: (val) {
-                                  rollno = val!;
-                                },
-                                keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
-                                  labelText: 'Roll Number',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10.0),
-                              // TextFormField(
-                              //   validator: (value) {
-                              //     RegExp nameRegExp = RegExp('[a-zA-Z]');
-                              //     RegExp numberRegExp = RegExp(r'\d');
-                              //     if (value.isEmpty) {
-                              //       return 'You Must enter your Department!';
-                              //     } else if (nameRegExp.hasMatch(value)) {
-                              //       return null;
-                              //     } else {
-                              //       return 'Enter Vaild department';
-                              //     }
-                              //   },
-                              //   onSaved: (val) {
-                              //     dept = val;
-                              //   },
-                              //   keyboardType: TextInputType.name,
-                              //   decoration: InputDecoration(
-                              //     labelText: 'Department',
-                              //     contentPadding: EdgeInsets.all(5),
-                              //     labelStyle: TextStyle(
-                              //         fontFamily: 'Montserrat',
-                              //         fontWeight: FontWeight.bold,
-                              //         fontSize: 14,
-                              //         color: Colors.grey),
-                              //     focusedBorder: UnderlineInputBorder(
-                              //       borderSide: BorderSide(
-                              //         color: Colors.green,
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
-                              SelectFormField(
-                                type: SelectFormFieldType.dropdown,
-                                initialValue: 'department',
-                                icon: Icon(Icons.book),
-                                labelText: dept,
-                                items: [
-                                  ...(deptList).map((element) {
-                                    return {
-                                      'value': element['department_id'],
-                                      'label': element['dpt_name']
-                                    };
-                                  })
-                                ],
-                                onChanged: (value) {
-                                  dept = value;
-                                  print(dept);
-                                },
-                              ),
-                              SelectFormField(
-                                type: SelectFormFieldType.dropdown,
-                                initialValue: 'sem',
-                                icon: Icon(Icons.book),
-                                labelText: sem,
-                                items: [
-                                  ...(semList).map((element) {
-                                    return {
-                                      'value': element['sem_id'],
-                                      'label': element['sem']
-                                    };
-                                  })
-                                ],
-                                onChanged: (value) {
-                                  sem = value;
-                                },
-                              ),
-                              SizedBox(height: 10.0),
-                              // TextFormField(
-                              //   validator: (value) {
-                              //     RegExp nameRegExp = RegExp('[a-zA-Z]');
-                              //     RegExp numberRegExp = RegExp(r'\d');
-                              //     if (value.isEmpty) {
-                              //       return 'You Must enter your Semester!';
-                              //     } else if (nameRegExp.hasMatch(value)) {
-                              //       return null;
-                              //     } else {
-                              //       return 'Enter Vaild name';
-                              //     }
-                              //   },
-                              //   onSaved: (val) {
-                              //     sem = val;
-                              //   },
-                              //   keyboardType: TextInputType.name,
-                              //   decoration: InputDecoration(
-                              //     labelText: 'Semester',
-                              //     contentPadding: EdgeInsets.all(5),
-                              //     labelStyle: TextStyle(
-                              //         fontFamily: 'Montserrat',
-                              //         fontWeight: FontWeight.bold,
-                              //         fontSize: 14,
-                              //         color: Colors.grey),
-                              //     focusedBorder: UnderlineInputBorder(
-                              //       borderSide: BorderSide(
-                              //         color: Colors.green,
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
-                              // SizedBox(height: 10.0),
-                              TextFormField(
-                                onSaved: (val) {
-                                  gua = val!;
-                                },
-                                validator: (val) {
-                                  if (val!.isEmpty) {
-                                    return 'Enter name of guardian';
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                                decoration: InputDecoration(
-                                  labelText: 'Guardian',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                onSaved: (val) {
-                                  add = val!;
-                                },
-                                validator: (value) {
-                                  RegExp nameRegExp = RegExp('[a-zA-Z]');
-                                  if (value!.isEmpty) {
-                                    return 'You Must enter this feild!';
-                                  } else if (nameRegExp.hasMatch(value)) {
-                                    return null;
-                                  } else {
-                                    return 'Enter Vaild address';
-                                  }
-                                },
-                                decoration: InputDecoration(
-                                  labelText: 'Address',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey,
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                validator: (value) {
-                                  if ((Fzregex.hasMatch(
-                                          value!, FzPattern.email) ==
-                                      false)) {
-                                    return "Enter your address";
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                                onSaved: (value) {
-                                  email = value!;
-                                },
-                                keyboardType: TextInputType.emailAddress,
-                                decoration: InputDecoration(
-                                  labelText: 'E-Mail',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                validator: (value) {
-                                  String pattern =
-                                      r'(^(?:[+0]9)?[0-9]{10,12}$)';
-                                  RegExp regExp = RegExp(pattern);
-                                  if (value!.isEmpty) {
-                                    return 'Please enter mobile number';
-                                  } else if (!regExp.hasMatch(value)) {
-                                    return 'Please enter valid mobile number';
-                                  }
+                        key: _formkey,
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[a-zA-Z]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter your Name!';
+                                } else if (nameRegExp.hasMatch(value)) {
                                   return null;
-                                },
-                                onSaved: (val) {
-                                  phno = val!;
-                                },
-                                decoration: InputDecoration(
-                                  labelText: 'Phone Number',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              // SizedBox(height: 10.0),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                validator: (value) {
-                                  RegExp nameRegExp = RegExp('[a-zA-Z]');
-                                  if (value!.isEmpty) {
-                                    return 'You Must set your username!';
-                                  } else if (nameRegExp.hasMatch(value)) {
-                                    return null;
-                                  } else {
-                                    return 'Enter Vaild username';
-                                  }
-                                },
-                                onSaved: (val) {
-                                  user = val!;
-                                },
-                                keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
-                                  labelText: 'Username',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
+                                } else {
+                                  return 'Enter Vaild name';
+                                }
+                              },
+                              onSaved: (val) {
+                                name = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Name',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
-                                    color: Colors.grey,
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10.0),
-                              TextFormField(
-                                validator: (value) {
-                                  RegExp nameRegExp = RegExp('[a-zA-Z]');
-                                  if (value!.isEmpty) {
-                                    return 'You Must enter your Password!';
-                                  } else if (nameRegExp.hasMatch(value)) {
-                                    return null;
-                                  } else {
-                                    return 'Enter Vaild password';
-                                  }
-                                },
-                                onSaved: (val) {
-                                  pass = val!;
-                                },
-                                keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
-                                  labelText: 'Password',
-                                  contentPadding: EdgeInsets.all(5),
-                                  labelStyle: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Colors.grey),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.green,
-                                    ),
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[0-9]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter Register Number!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild register number';
+                                }
+                              },
+                              onSaved: (val) {
+                                reg_no = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Register Number',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
                                   ),
                                 ),
                               ),
-                            ],
-                          )),
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[0-9]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter Roll number!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild rollno';
+                                }
+                              },
+                              onSaved: (val) {
+                                rollno = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Roll Number',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            // TextFormField(
+                            //   validator: (value) {
+                            //     RegExp nameRegExp = RegExp('[a-zA-Z]');
+                            //     RegExp numberRegExp = RegExp(r'\d');
+                            //     if (value.isEmpty) {
+                            //       return 'You Must enter your Department!';
+                            //     } else if (nameRegExp.hasMatch(value)) {
+                            //       return null;
+                            //     } else {
+                            //       return 'Enter Vaild department';
+                            //     }
+                            //   },
+                            //   onSaved: (val) {
+                            //     dept = val;
+                            //   },
+                            //   keyboardType: TextInputType.name,
+                            //   decoration: InputDecoration(
+                            //     labelText: 'Department',
+                            //     contentPadding: EdgeInsets.all(5),
+                            //     labelStyle: TextStyle(
+                            //         fontFamily: 'Montserrat',
+                            //         fontWeight: FontWeight.bold,
+                            //         fontSize: 14,
+                            //         color: Colors.grey),
+                            //     focusedBorder: UnderlineInputBorder(
+                            //       borderSide: BorderSide(
+                            //         color: Colors.green,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                            SelectFormField(
+                              type: SelectFormFieldType.dropdown,
+                              initialValue: 'department',
+                              icon: Icon(Icons.book),
+                              labelText: dept,
+                              items: [
+                                ...(deptList).map((element) {
+                                  return {
+                                    'value': element['department_id'],
+                                    'label': element['dpt_name']
+                                  };
+                                })
+                              ],
+                              onChanged: (value) {
+                                dept = value;
+                                print(dept);
+                              },
+                            ),
+                            SelectFormField(
+                              type: SelectFormFieldType.dropdown,
+                              initialValue: 'sem',
+                              icon: Icon(Icons.book),
+                              labelText: sem,
+                              items: [
+                                ...(semList).map((element) {
+                                  return {
+                                    'value': element['sem_id'],
+                                    'label': element['sem']
+                                  };
+                                })
+                              ],
+                              onChanged: (value) {
+                                sem = value;
+                              },
+                            ),
+                            SizedBox(height: 10),
+                            // TextFormField(
+                            //   validator: (value) {
+                            //     RegExp nameRegExp = RegExp('[a-zA-Z]');
+                            //     RegExp numberRegExp = RegExp(r'\d');
+                            //     if (value.isEmpty) {
+                            //       return 'You Must enter your Semester!';
+                            //     } else if (nameRegExp.hasMatch(value)) {
+                            //       return null;
+                            //     } else {
+                            //       return 'Enter Vaild name';
+                            //     }
+                            //   },
+                            //   onSaved: (val) {
+                            //     sem = val;
+                            //   },
+                            //   keyboardType: TextInputType.name,
+                            //   decoration: InputDecoration(
+                            //     labelText: 'Semester',
+                            //     contentPadding: EdgeInsets.all(5),
+                            //     labelStyle: TextStyle(
+                            //         fontFamily: 'Montserrat',
+                            //         fontWeight: FontWeight.bold,
+                            //         fontSize: 14,
+                            //         color: Colors.grey),
+                            //     focusedBorder: UnderlineInputBorder(
+                            //       borderSide: BorderSide(
+                            //         color: Colors.green,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                            // SizedBox(height: 10),
+                            TextFormField(
+                              onSaved: (val) {
+                                gua = val!;
+                              },
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return 'Enter name of guardian';
+                                } else {
+                                  return null;
+                                }
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Guardian',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              onSaved: (val) {
+                                add = val!;
+                              },
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[a-zA-Z]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter this feild!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild address';
+                                }
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Address',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                if ((Fzregex.hasMatch(
+                                        value!, FzPattern.email) ==
+                                    false)) {
+                                  return "Enter your address";
+                                } else {
+                                  return null;
+                                }
+                              },
+                              onSaved: (value) {
+                                email = value!;
+                              },
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                labelText: 'E-Mail',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+                                RegExp regExp = RegExp(pattern);
+                                if (value!.isEmpty) {
+                                  return 'Please enter mobile number';
+                                } else if (!regExp.hasMatch(value)) {
+                                  return 'Please enter valid mobile number';
+                                }
+                                return null;
+                              },
+                              onSaved: (val) {
+                                phno = val!;
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Phone Number',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // SizedBox(height: 10),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[a-zA-Z]');
+                                if (value!.isEmpty) {
+                                  return 'You Must set your username!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild username';
+                                }
+                              },
+                              onSaved: (val) {
+                                user = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Username',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[a-zA-Z]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter your Password!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild password';
+                                }
+                              },
+                              onSaved: (val) {
+                                pass = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Password',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Colors.grey),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
               SizedBox(
-                height: 10.0,
+                height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20.0, 5, 20.0, 5),
+                padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                 child: Transform(
                   transform: Matrix4.translationValues(
                       muchDelayedAnimation.value * width, 0, 0),
@@ -540,7 +540,7 @@ class _RequestLoginState extends State<RequestLogin>
                         },
                         child: MaterialButton(
                           onPressed: () {},
-                          elevation: 0.0,
+                          elevation: 0,
                           minWidth: MediaQuery.of(context).size.width,
                           color: Colors.teal[900],
                           child: Text(
@@ -553,7 +553,7 @@ class _RequestLoginState extends State<RequestLogin>
                   ),
                 ),
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: 10),
             ],
           ),
         );
@@ -592,8 +592,10 @@ class _RequestLoginState extends State<RequestLogin>
       "password": pass,
     };
     print(params);
-    http.Response result = await http
-        .post(Uri.parse("${Constants.x}registration.php"), body: params);
+    http.Response result = await http.post(
+      Uri.parse("${Constants.x}registration.php"),
+      body: params,
+    );
     if (result.statusCode == 200) {
       var data = jsonDecode(result.body);
       if (data['status'] == "registration successful") {

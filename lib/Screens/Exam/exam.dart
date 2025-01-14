@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
 
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -92,7 +91,7 @@ class _ExamState extends State<Exam> {
                               final answer = TextEditingController();
                               if (!removeList.contains(index)) {
                                 return Padding(
-                                  padding: const EdgeInsets.all(20.0),
+                                  padding: const EdgeInsets.all(20),
                                   child: SingleChildScrollView(
                                     child: Column(
                                       mainAxisAlignment:
@@ -118,28 +117,24 @@ class _ExamState extends State<Exam> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
+                                                        const EdgeInsets.all(8),
                                                     child: Text(
                                                       'a) op1',
                                                     ),
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
+                                                        const EdgeInsets.all(8),
                                                     child: Text('b) op2'),
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
+                                                        const EdgeInsets.all(8),
                                                     child: Text('c) op3'),
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
+                                                        const EdgeInsets.all(8),
                                                     child: Text('d) op4'),
                                                   ),
                                                 ],

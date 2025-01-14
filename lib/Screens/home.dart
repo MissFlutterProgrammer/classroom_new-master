@@ -59,41 +59,41 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       duration: Duration(seconds: 3),
       vsync: this,
     );
-    animation = Tween(begin: -1.0, end: 0.0).animate(
+    animation = Tween(begin: -1, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Curves.fastOutSlowIn,
       ),
     );
 
-    delayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+    delayedAnimation = Tween(begin: -1, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
           0.5,
-          1.0,
+          1,
           curve: Curves.fastOutSlowIn,
         ),
       ),
     );
 
-    muchDelayedAnimation = Tween(begin: -1.0, end: 0.0).animate(
+    muchDelayedAnimation = Tween(begin: -1, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
           0.8,
-          1.0,
+          1,
           curve: Curves.fastOutSlowIn,
         ),
       ),
     );
 
-    LeftCurve = Tween(begin: -1.0, end: 0.0).animate(
+    LeftCurve = Tween(begin: -1, end: 0.0).animate(
       CurvedAnimation(
         parent: animationController,
         curve: Interval(
           0.5,
-          1.0,
+          1,
           curve: Curves.easeInOut,
         ),
       ),
@@ -150,9 +150,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
                 child: Container(
-                  alignment: Alignment(1.0, 0),
+                  alignment: Alignment(1, 0),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0, right: 20.0),
+                    padding: const EdgeInsets.only(top: 10, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -162,11 +162,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           child: Bouncing(
                             onPress: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        Attendance(),
-                                  ));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      Attendance(),
+                                ),
+                              );
                             },
                             child: DashboardCard(
                               name: "Attendance",
@@ -180,11 +181,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           child: Bouncing(
                             onPress: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        Profile(),
-                                  ));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => Profile(),
+                                ),
+                              );
                             },
                             child: DashboardCard(
                               name: "Profile",
@@ -200,9 +201,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
                 child: Container(
-                  alignment: Alignment(1.0, 0),
+                  alignment: Alignment(1, 0),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0, right: 20.0),
+                    padding: const EdgeInsets.only(top: 10, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -251,9 +252,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
                 child: Container(
-                  alignment: Alignment(1.0, 0),
+                  alignment: Alignment(1, 0),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0, right: 20.0),
+                    padding: const EdgeInsets.only(top: 10, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -303,9 +304,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
                 child: Container(
-                  alignment: Alignment(1.0, 0),
+                  alignment: Alignment(1, 0),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0, right: 20.0),
+                    padding: const EdgeInsets.only(top: 10, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
