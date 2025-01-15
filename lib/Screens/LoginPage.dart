@@ -186,7 +186,9 @@ class _MyHomePageState extends State<MyHomePage>
           color: Colors.grey,
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.green),
+          borderSide: BorderSide(
+            color: Colors.green,
+          ),
         ),
       ),
     );
@@ -289,7 +291,9 @@ class _MyHomePageState extends State<MyHomePage>
             color: Colors.teal[900],
             child: const Text(
               "Login",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
             onPressed: () async {
               if (_formKey.currentState!.validate()) {

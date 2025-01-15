@@ -111,9 +111,10 @@ class _RequestLoginState extends State<RequestLogin>
                         Text(
                           'Register',
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -151,10 +152,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'Name',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -182,10 +184,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'Register Number',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -213,10 +216,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'Roll Number',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -225,37 +229,37 @@ class _RequestLoginState extends State<RequestLogin>
                               ),
                             ),
                             SizedBox(height: 10),
-                            // TextFormField(
-                            //   validator: (value) {
-                            //     RegExp nameRegExp = RegExp('[a-zA-Z]');
-                            //     RegExp numberRegExp = RegExp(r'\d');
-                            //     if (value.isEmpty) {
-                            //       return 'You Must enter your Department!';
-                            //     } else if (nameRegExp.hasMatch(value)) {
-                            //       return null;
-                            //     } else {
-                            //       return 'Enter Vaild department';
-                            //     }
-                            //   },
-                            //   onSaved: (val) {
-                            //     dept = val;
-                            //   },
-                            //   keyboardType: TextInputType.name,
-                            //   decoration: InputDecoration(
-                            //     labelText: 'Department',
-                            //     contentPadding: EdgeInsets.all(5),
-                            //     labelStyle: TextStyle(
-                            //         fontFamily: 'Montserrat',
-                            //         fontWeight: FontWeight.bold,
-                            //         fontSize: 14,
-                            //         color: Colors.grey),
-                            //     focusedBorder: UnderlineInputBorder(
-                            //       borderSide: BorderSide(
-                            //         color: Colors.green,
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[a-zA-Z]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter your Department!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild department';
+                                }
+                              },
+                              onSaved: (val) {
+                                dept = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Department',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
                             SelectFormField(
                               type: SelectFormFieldType.dropdown,
                               initialValue: 'department',
@@ -292,38 +296,38 @@ class _RequestLoginState extends State<RequestLogin>
                               },
                             ),
                             SizedBox(height: 10),
-                            // TextFormField(
-                            //   validator: (value) {
-                            //     RegExp nameRegExp = RegExp('[a-zA-Z]');
-                            //     RegExp numberRegExp = RegExp(r'\d');
-                            //     if (value.isEmpty) {
-                            //       return 'You Must enter your Semester!';
-                            //     } else if (nameRegExp.hasMatch(value)) {
-                            //       return null;
-                            //     } else {
-                            //       return 'Enter Vaild name';
-                            //     }
-                            //   },
-                            //   onSaved: (val) {
-                            //     sem = val;
-                            //   },
-                            //   keyboardType: TextInputType.name,
-                            //   decoration: InputDecoration(
-                            //     labelText: 'Semester',
-                            //     contentPadding: EdgeInsets.all(5),
-                            //     labelStyle: TextStyle(
-                            //         fontFamily: 'Montserrat',
-                            //         fontWeight: FontWeight.bold,
-                            //         fontSize: 14,
-                            //         color: Colors.grey),
-                            //     focusedBorder: UnderlineInputBorder(
-                            //       borderSide: BorderSide(
-                            //         color: Colors.green,
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                            // SizedBox(height: 10),
+                            TextFormField(
+                              validator: (value) {
+                                RegExp nameRegExp = RegExp('[a-zA-Z]');
+                                if (value!.isEmpty) {
+                                  return 'You Must enter your Semester!';
+                                } else if (nameRegExp.hasMatch(value)) {
+                                  return null;
+                                } else {
+                                  return 'Enter Vaild name';
+                                }
+                              },
+                              onSaved: (val) {
+                                sem = val!;
+                              },
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                labelText: 'Semester',
+                                contentPadding: EdgeInsets.all(5),
+                                labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 10),
                             TextFormField(
                               onSaved: (val) {
                                 gua = val!;
@@ -339,10 +343,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'Guardian',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -400,10 +405,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'E-Mail',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -430,10 +436,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'Phone Number',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -441,7 +448,6 @@ class _RequestLoginState extends State<RequestLogin>
                                 ),
                               ),
                             ),
-                            // SizedBox(height: 10),
                             SizedBox(height: 10),
                             TextFormField(
                               validator: (value) {
@@ -494,10 +500,11 @@ class _RequestLoginState extends State<RequestLogin>
                                 labelText: 'Password',
                                 contentPadding: EdgeInsets.all(5),
                                 labelStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey),
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Colors.green,
@@ -512,9 +519,7 @@ class _RequestLoginState extends State<RequestLogin>
                   ),
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                 child: Transform(
@@ -545,7 +550,9 @@ class _RequestLoginState extends State<RequestLogin>
                           color: Colors.teal[900],
                           child: Text(
                             "Register",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -562,15 +569,17 @@ class _RequestLoginState extends State<RequestLogin>
   }
 
   Future<dynamic> getData() async {
-    http.Response result =
-        await http.post(Uri.parse("${Constants.x}view_department.php"));
+    http.Response result = await http.post(
+      Uri.parse("${Constants.x}view_department.php"),
+    );
     deptList = jsonDecode(result.body);
     return jsonDecode(result.body);
   }
 
   Future<dynamic> getSemData() async {
-    http.Response result =
-        await http.post(Uri.parse("${Constants.x}view_sem.php"));
+    http.Response result = await http.post(
+      Uri.parse("${Constants.x}view_sem.php"),
+    );
     semList = jsonDecode(result.body);
 
     print(jsonDecode(result.body));
