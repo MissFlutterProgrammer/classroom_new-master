@@ -108,16 +108,31 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   setDeptId() async {
     final spref = await SharedPreferences.getInstance();
-    print(spref.getString('reg_no').toString());
+    String? regNo = spref.getString('reg_no'); // Use String? to allow null
+
+    if (regNo == null) {
+      print("reg_no is null in SharedPreferences");
+      return; // Exit the function if reg_no is null
+    }
+
     var url = "${Constants.x}view_student.php";
     final response = await post(Uri.parse(url), body: {
-      'reg': spref.getString('reg_no'),
-      // 'reg_no': reg_no,
+      'reg': regNo, // Use the non-null regNo
     });
-    spref.setString(
-      'department_id',
-      jsonDecode(response.body)['department'],
-    );
+
+    // Ensure the response body is not null and contains the expected data
+    try {
+      var decodedResponse = jsonDecode(response.body);
+      String? departmentId = decodedResponse['department'];
+
+      if (departmentId != null) {
+        spref.setString('department_id', departmentId);
+      } else {
+        print("Department ID is null in the response");
+      }
+    } catch (e) {
+      print("Error decoding JSON: $e");
+    }
   }
 
   @override

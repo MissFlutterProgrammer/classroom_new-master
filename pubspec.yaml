@@ -15,7 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   # firebase_auth: ^5.4.0
   google_sign_in: ^6.2.2
-  dropdown_search: ^6.0.1
+  dropdown_search: ^6.0.2
   date_time_picker: ^2.1.0
   date_field: any
   fzregex: ^2.1.1
