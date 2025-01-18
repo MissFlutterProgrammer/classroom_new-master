@@ -7,6 +7,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool menuenabled;
   final bool notificationenabled;
   final Function ontap;
+
   const CommonAppBar({
     super.key,
     required this.title,
@@ -28,7 +29,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: menuenabled == true
           ? IconButton(
               color: Colors.black,
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
               icon: Icon(
                 Icons.menu,
               ),

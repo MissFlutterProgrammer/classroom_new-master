@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:school_management/Screens/Attendance/OverallAttendance.dart';
+import 'package:school_management/Screens/Attendance/TodayAttendance.dart';
 import 'package:school_management/Widgets/AppBar.dart';
 import 'package:school_management/Widgets/MainDrawer.dart';
 import 'package:school_management/Widgets/UserDetailCard.dart';
@@ -61,7 +62,7 @@ class _AttendanceState extends State<Attendance>
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: TabBarView(
                       children: <Widget>[
-                        // TodayAttendance(),
+                        TodayAttendance(),
                         OverallAttendance(),
                       ],
                     ),
