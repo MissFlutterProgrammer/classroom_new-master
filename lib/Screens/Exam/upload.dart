@@ -18,14 +18,22 @@ class ImageUpload {
   }) async {
     bool ret;
 
-    var stream = ByteStream(DelegatingStream.typed(imageFile.openRead()));
+    var stream = ByteStream(
+      DelegatingStream.typed(
+        imageFile.openRead(),
+      ),
+    );
     var length = await imageFile.length();
 
     var uri = url;
 
     var request = MultipartRequest("POST", uri);
-    var multipartFile =
-        MultipartFile('f1', stream, length, filename: basename(imageFile.path));
+    var multipartFile = MultipartFile(
+      'f1',
+      stream,
+      length,
+      filename: basename(imageFile.path),
+    );
     //contentType: new MediaType('image', 'png'));
     // request.fields['presc_name'] = name;
     request.fields['name'] = name!;

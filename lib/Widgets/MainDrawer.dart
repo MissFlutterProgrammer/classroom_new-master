@@ -36,20 +36,6 @@ class _MainDrawerState extends State<MainDrawer> {
                 ),
               );
             }),
-        // DrawerListTile(
-        //   imgpath: "attendance.png",
-        //   name: "Attendance",
-        //   ontap: () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(
-        //         builder: (BuildContext context) => Attendance(),
-        //       ),
-        //     );
-        //   },
-        // ),
-        // DrawerListTile(
-        //     imgpath: "classroom.png", name: "Class work", ontap: () {}),
         DrawerListTile(
             imgpath: "profile.png",
             name: "Profile",
@@ -73,7 +59,6 @@ class _MainDrawerState extends State<MainDrawer> {
             );
           },
         ),
-        // DrawerListTile(imgpath: "fee.png", name: "Fees", ontap: () {}),
         DrawerListTile(
             imgpath: "calendar.png",
             name: "Time Table",
@@ -96,7 +81,6 @@ class _MainDrawerState extends State<MainDrawer> {
                 ),
               );
             }),
-
         DrawerListTile(
             imgpath: "library.png",
             name: "Assignments",
@@ -119,8 +103,6 @@ class _MainDrawerState extends State<MainDrawer> {
                 ),
               );
             }),
-        // DrawerListTile(imgpath: "downloads.png", name: "Downloads"),
-        // DrawerListTile(imgpath: "bus.png", name: "Track ", ontap: () {}),
         DrawerListTile(
           imgpath: "message.png",
           name: "Feedback",
@@ -140,12 +122,10 @@ class _MainDrawerState extends State<MainDrawer> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => MyHomePage(title: ''),
+                  builder: (BuildContext context) => MyHomePage(),
                 ),
               );
             }),
-        // DrawerListTile(
-        //     imgpath: "notification.png", name: "Notification", ontap: () {}),
       ],
     );
   }

@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, library_private_types_in_public_api, non_constant_identifier_names, avoid_print, use_build_context_synchronously, prefer_typing_uninitialized_variables
+// ignore_for_file: file_names, library_private_types_in_public_api, non_constant_identifier_names, avoid_print, use_build_context_synchronously, prefer_typing_uninitialized_variables, deprecated_member_use
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
@@ -130,40 +130,36 @@ class _LeaveApplyState extends State<LeaveApply>
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Divider(
-                    //   color: Colors.black.withOpacity(0.5),
-                    //   height: 1,
-                    // ),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      height: 1,
+                    ),
                     SizedBox(
                       height: height * 0.05,
                     ),
-
                     SizedBox(
                       height: height * 0.03,
                     ),
-
                     SizedBox(
                       height: height * 0.02,
                     ),
-
                     SizedBox(
                       height: height * 0.05,
                     ),
-
                     SizedBox(
                       height: height * 0.05,
                     ),
-                    // Transform(
-                    //   transform: Matrix4.translationValues(
-                    //       muchDelayedAnimation.value * width, 0, 0),
-                    //   child: Text(
-                    //     "Apply Leave Date",
-                    //     style: TextStyle(
-                    //       fontWeight: FontWeight.bold,
-                    //       fontSize: 15,
-                    //     ),
-                    //   ),
-                    // ),
+                    Transform(
+                      transform: Matrix4.translationValues(
+                          muchDelayedAnimation.value * width, 0, 0),
+                      child: Text(
+                        "Apply Leave Date",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
                     Transform(
                       transform: Matrix4.translationValues(
                           delayedAnimation.value * width, 0, 0),
@@ -203,7 +199,6 @@ class _LeaveApplyState extends State<LeaveApply>
                     SizedBox(
                       height: height * 0.05,
                     ),
-
                     Transform(
                       transform: Matrix4.translationValues(
                           delayedAnimation.value * width, 0, 0),
@@ -213,7 +208,7 @@ class _LeaveApplyState extends State<LeaveApply>
                           getData();
                         },
                         child: Container(
-                          //height: 20,
+                          height: 20,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
@@ -250,7 +245,6 @@ class _LeaveApplyState extends State<LeaveApply>
                         bottom: 8,
                       ),
                     ),
-
                     SizedBox(height: 10),
                   ],
                 ),

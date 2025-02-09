@@ -12,9 +12,9 @@ import 'package:school_management/Widgets/BouncingButton.dart';
 import 'RequestLogin.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, this.title});
 
-  final String title;
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();

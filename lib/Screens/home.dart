@@ -8,6 +8,7 @@ import 'package:school_management/Screens/Exam/Exam_Rseult.dart';
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:school_management/Screens/Exam/notification.dart';
 import 'package:school_management/Screens/Exam/timetable.dart';
+import 'package:school_management/Screens/Leave_Apply/Leave_apply.dart';
 import 'package:school_management/Widgets/AppBar.dart';
 import 'package:school_management/Widgets/BouncingButton.dart';
 import 'package:school_management/Widgets/DashboardCards.dart';
@@ -17,7 +18,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'Attendance/Attendance.dart';
 import 'Exam/exam.dart';
 import 'Exam/profile.dart';
-// import 'Leave_Apply/Leave_apply.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -120,7 +120,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       'reg': regNo, // Use the non-null regNo
     });
 
-    // Ensure the response body is not null and contains the expected data
     try {
       var decodedResponse = jsonDecode(response.body);
       String? departmentId = decodedResponse['department'];
@@ -325,35 +324,36 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Transform(
-                        //   transform: Matrix4.translationValues(
-                        //       muchDelayedAnimation.value * width, 0, 0),
-                        //   child: Bouncing(
-                        //     onPress: () {},
-                        //     child: DashboardCard(
-                        //       name: "Notification",
-                        //       imgpath: "notification.png",
-                        //     ),
-                        //   ),
-                        // ),
-                        // Transform(
-                        //   transform: Matrix4.translationValues(
-                        //       delayedAnimation.value * width, 0, 0),
-                        //   child: Bouncing(
-                        //     onPress: () {
-                        //       Navigator.push(
-                        //           context,
-                        //           MaterialPageRoute(
-                        //             builder: (BuildContext context) =>
-                        //                 LeaveApply(),
-                        //           ));
-                        //     },
-                        //     child: DashboardCard(
-                        //       name: "Feedback",
-                        //       imgpath: "leave_apply.png",
-                        //     ),
-                        //   ),
-                        // ),
+                        Transform(
+                          transform: Matrix4.translationValues(
+                              muchDelayedAnimation.value * width, 0, 0),
+                          child: Bouncing(
+                            onPress: () {},
+                            child: DashboardCard(
+                              name: "Notification",
+                              imgpath: "notification.png",
+                            ),
+                          ),
+                        ),
+                        Transform(
+                          transform: Matrix4.translationValues(
+                              delayedAnimation.value * width, 0, 0),
+                          child: Bouncing(
+                            onPress: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      LeaveApply(),
+                                ),
+                              );
+                            },
+                            child: DashboardCard(
+                              name: "Feedback",
+                              imgpath: "leave_apply.png",
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -366,11 +366,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 
-  // saveString(String key, String value) async {
-  //   final pref = await SharedPreferences.getInstance();
-  //   await pref.setString(key, value);
-  //   return true;
-  // }
+  saveString(String key, String value) async {
+    final pref = await SharedPreferences.getInstance();
+    await pref.setString(key, value);
+    return true;
+  }
 
   Future<String> getString(String key) async {
     final pref = await SharedPreferences.getInstance();

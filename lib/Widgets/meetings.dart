@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:pet_spotter/utils/constant.dart';
 
 class Meetings extends StatelessWidget {
   const Meetings({super.key});
@@ -17,7 +16,9 @@ class Meetings extends StatelessWidget {
     final spref = await SharedPreferences.getInstance();
     final res = await http.post(
       Uri.parse('${Constants.x}view_online_class.php'),
-      body: {'department_id': spref.getString('department_id')},
+      body: {
+        'department_id': spref.getString('department_id'),
+      },
     );
     print(res.body);
     return jsonDecode(res.body);

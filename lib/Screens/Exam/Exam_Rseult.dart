@@ -322,17 +322,17 @@ class _ExamResultState extends State<ExamResult>
                       padding: const EdgeInsets.only(top: 13.0),
                       child: Row(
                         children: [
-                          // Transform(
-                          //   transform: Matrix4.translationValues(
-                          //       muchDelayedAnimation.value * width, 0, 0),
-                          //   child: Text(
-                          //     "Result: ",
-                          //     style: TextStyle(
-                          //       fontSize: 15,
-                          //       //fontWeight: FontWeight.bold,
-                          //     ),
-                          //   ),
-                          // ),
+                          Transform(
+                            transform: Matrix4.translationValues(
+                                muchDelayedAnimation.value * width, 0, 0),
+                            child: Text(
+                              "Result: ",
+                              style: TextStyle(
+                                fontSize: 15,
+                                //fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                           SizedBox(
                             width: height * 0.03,
                           ),

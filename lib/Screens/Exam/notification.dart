@@ -39,53 +39,36 @@ class _NotificationsState extends State<Notifications> {
       appBar: AppBar(
         title: Text('Notifications'),
       ),
-      body:
-          //  ListView(
-          //   children: [
-          //     SizedBox(height: 20),
-          //     Card(
-          //       child:
-          // ListTile(
-          //         leading: CircleAvatar(
-          //           backgroundColor: Colors.white,
-          //           backgroundImage: NetworkImage(
-          //               "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png"),
-          //         ),
-          //         title:
-          FutureBuilder(
-              future: getData(),
-              builder: (context, snap) {
-                print('data: $data');
-                if (snap.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
-                } else {
-                  SizedBox(
-                    height: 20,
-                  );
-                }
-                return ListView.builder(
-                  itemCount: (data as List).length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: NetworkImage(
-                            "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png",
-                          ),
-                        ),
-                        title: Text(
-                          data[index]['message'],
-                        ),
+      body: FutureBuilder(
+          future: getData(),
+          builder: (context, snap) {
+            print('data: $data');
+            if (snap.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            } else {
+              SizedBox(
+                height: 20,
+              );
+            }
+            return ListView.builder(
+              itemCount: (data as List).length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      backgroundImage: NetworkImage(
+                        "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png",
                       ),
-                    );
-                  },
+                    ),
+                    title: Text(
+                      data[index]['message'],
+                    ),
+                  ),
                 );
-              }),
-      //       ),
-      //     ),
-      //   ],
-      // ),
+              },
+            );
+          }),
     );
   }
 }

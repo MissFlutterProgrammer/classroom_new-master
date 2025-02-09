@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:school_management/Screens/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await FlutterDownloader.initialize(ignoreSsl: false, debug: true);
+  await FlutterDownloader.initialize(ignoreSsl: false, debug: true);
   runApp(MyApp());
 }
 

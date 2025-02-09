@@ -39,74 +39,57 @@ class _TimetableState extends State<Timetable> {
       appBar: AppBar(
         title: Text('Timetable'),
       ),
-      body:
-          //  ListView(
-          //   children: [
-          //     SizedBox(height: 20),
-          //     Card(
-          //       child:
-          // ListTile(
-          //         leading: CircleAvatar(
-          //           backgroundColor: Colors.white,
-          //           backgroundImage: NetworkImage(
-          //               "https://i.pinimg.com/originals/f0/c4/04/f0c404c8486dea5ab74ff001af848ab7.png",),
-          //         ),
-          //         title:
-          FutureBuilder(
-              future: getData(),
-              builder: (context, snap) {
-                print('data: $data');
-                if (snap.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
-                } else {
-                  SizedBox(height: 20);
-                }
-                return Center(
-                  child: Card(
-                    child: SizedBox(
-                      height: 250,
-                      width: 200,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Forenoon',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            'Subject : forenoon_sub',
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Teacher : forenoon_teacher',
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Afternoon',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            'Subject : afternoon_sub',
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Teacher : afternoon_teacher',
-                          ),
-                          SizedBox(height: 10),
-                        ],
+      body: FutureBuilder(
+          future: getData(),
+          builder: (context, snap) {
+            print('data: $data');
+            if (snap.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            } else {
+              SizedBox(height: 20);
+            }
+            return Center(
+              child: Card(
+                child: SizedBox(
+                  height: 250,
+                  width: 200,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Forenoon',
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
                       ),
-                    ),
+                      SizedBox(height: 20),
+                      Text(
+                        'Subject : forenoon_sub',
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Teacher : forenoon_teacher',
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Afternoon',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'Subject : afternoon_sub',
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Teacher : afternoon_teacher',
+                      ),
+                      SizedBox(height: 10),
+                    ],
                   ),
-                );
-              }),
-      //       ),
-      //     ),
-      //   ],
-      // ),
+                ),
+              ),
+            );
+          }),
     );
   }
 }

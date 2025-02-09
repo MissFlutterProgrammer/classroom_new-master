@@ -88,7 +88,7 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
               title: Text('Profile'),
               backgroundColor: Color.fromARGB(255, 108, 147, 237),
               centerTitle: true,
-            ), //AppBar
+            ),
             body: Center(
               /** Card Widget **/
               child: FutureBuilder(
@@ -125,11 +125,11 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                   trailing: Text('email'),
                                 ),
                                 Divider(),
-                                // ListTile(
-                                //   title: Text('Department :'),
-                                //   trailing: Text(snap.data['department']),
-                                // ),
-                                // Divider(),
+                                ListTile(
+                                  title: Text('Department :'),
+                                  trailing: Text('department'),
+                                ),
+                                Divider(),
                                 ListTile(
                                   title: Text('Mobile No :'),
                                   trailing: Text('mobile'),
@@ -148,13 +148,13 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                                   child: Icon(Icons.edit),
                                 )
                               ],
-                            ), //Column
-                          ), //Padding
-                        ), //SizedBox
+                            ),
+                          ),
+                        ),
                       );
                     }
-                  }), //Card
-            ), //Center
+                  }),
+            ),
           );
         });
   }

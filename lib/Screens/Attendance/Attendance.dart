@@ -35,7 +35,7 @@ class _AttendanceState extends State<Attendance>
       ),
       body: SingleChildScrollView(
         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             UserDetailCard(),
             DefaultTabController(

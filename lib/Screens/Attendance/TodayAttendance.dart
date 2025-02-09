@@ -20,7 +20,6 @@ class _TodayAttendanceState extends State<TodayAttendance> {
             attendance: true,
             staff: "Deepak",
             date: "12/03/2323",
-            // subject: "English",
           ),
         ],
       ),

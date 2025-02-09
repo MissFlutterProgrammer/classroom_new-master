@@ -193,7 +193,6 @@ class _ForgetPasswordState extends State<ForgetPassword>
                   ),
                 ),
               ),
-              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                 child: Transform(
@@ -225,7 +224,6 @@ class _ForgetPasswordState extends State<ForgetPassword>
                   ),
                 ),
               ),
-              SizedBox(height: 10),
             ],
           ),
         );

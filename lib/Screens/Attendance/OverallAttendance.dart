@@ -25,18 +25,14 @@ class _OverallAttendanceState extends State<OverallAttendance> {
     var url = "${Constants.x}attendance_history.php";
     final response = await post(Uri.parse(url), body: {
       'reg_no': spref.getString('reg_no'),
-      // 'reg_no': reg_no,
     });
     print(response.body);
-    // http.Response response = await http.post(Uri.parse(url));
 
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
-      // print('respons  $data');
+      print('respons  $data');
     }
   }
-
-  // @overrided
 
   @override
   Widget build(BuildContext context) {

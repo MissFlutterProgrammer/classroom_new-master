@@ -105,7 +105,7 @@ class _UserDetailCardState extends State<UserDetailCard>
                       Transform(
                         transform: Matrix4.translationValues(
                             _muchDelayedAnimation.value * width, 0, 0),
-                        child: const Center(), // Placeholder for a widget
+                        child: const Center(),
                       ),
                       Transform(
                         transform: Matrix4.translationValues(

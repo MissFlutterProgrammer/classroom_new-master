@@ -1,4 +1,4 @@
-// // ignore_for_file: implementation_imports
+// // ignore_for_file: implementation_imports, avoid_print
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter/src/foundation/key.dart';
@@ -18,7 +18,6 @@
 // class _PDFViewPageState extends State<PDFViewPage> {
 //   @override
 //   void initState() {
-//     // TODO: implement initState
 //     super.initState();
 //     WebView.platform = AndroidWebView();
 //   }

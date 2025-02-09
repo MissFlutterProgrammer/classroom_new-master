@@ -52,7 +52,7 @@ class Update extends StatelessWidget {
         title: Text('Profile'),
         backgroundColor: Color.fromARGB(255, 108, 147, 237),
         centerTitle: true,
-      ), //AppBar
+      ),
       body: Center(
         /** Card Widget **/
         child: FutureBuilder(
@@ -79,9 +79,6 @@ class Update extends StatelessWidget {
                             ),
                           ),
                           Divider(),
-
-                          // title: Text(' Name :'),
-                          // trailing: Text(snap.data['name']),
                           TextField(
                             controller: nameController,
                             decoration: InputDecoration(
@@ -89,7 +86,6 @@ class Update extends StatelessWidget {
                               label: Text('Name'),
                             ),
                           ),
-
                           Divider(),
                           TextField(
                             controller: mobileController,
@@ -98,28 +94,14 @@ class Update extends StatelessWidget {
                               label: Text('Mobile'),
                             ),
                           ),
-                          // title: Text(' Email :'),
-                          // trailing: Text(snap.data['email']),
-
                           Divider(),
-                          // TextField(
-                          //     controller: departmentController,
-                          //     decoration: InputDecoration(
-                          //         border: UnderlineInputBorder(),
-                          //         label: Text(
-                          //             'Department'))), // title: Text('Department :'),
-                          // // trailing: Text(snap.data['department']),
-
-                          // Divider(),
                           TextField(
                             controller: emailController,
                             decoration: InputDecoration(
                               border: UnderlineInputBorder(),
                               label: Text('Email'),
                             ),
-                          ), // title: Text('Mobile No :'),
-                          // trailing: Text(snap.data['mobile']),
-
+                          ),
                           Divider(),
                           FloatingActionButton(
                             onPressed: () {
@@ -129,13 +111,13 @@ class Update extends StatelessWidget {
                             child: Icon(Icons.save),
                           )
                         ],
-                      ), //Column
-                    ), //Padding
+                      ),
+                    ),
                   ),
                 );
               }
             }),
-      ), //SizedBox
+      ),
     );
   }
 }

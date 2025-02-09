@@ -45,7 +45,7 @@ class _SpleashScreenState extends State<SpleashScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (BuildContext context) => MyHomePage(title: ''),
+          builder: (BuildContext context) => MyHomePage(),
         ),
       );
     });

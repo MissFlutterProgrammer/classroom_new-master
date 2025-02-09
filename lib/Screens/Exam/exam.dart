@@ -6,8 +6,6 @@ import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
-// import 'constants.dart';
-
 class Exam extends StatefulWidget {
   const Exam({super.key});
 
@@ -31,21 +29,22 @@ class _ExamState extends State<Exam> {
     print(response.body);
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
-      // print('respons  $data');
+      print('respons  $data');
     }
     return jsonDecode(response.body);
   }
 
   sendAnswer(int index, text) async {
-    http.Response result =
-        await http.post(Uri.parse("${Constants.x}send_ans.php"), body: {
-      'answer': text,
-      'q_id': (data[index]['id']).toString(),
-      'reg_no': '123',
-    });
+    http.Response result = await http.post(
+      Uri.parse("${Constants.x}send_ans.php"),
+      body: {
+        'answer': text,
+        'q_id': (data[index]['id']).toString(),
+        'reg_no': '123',
+      },
+    );
 
     print("result${result.body}");
-    // var data = jsonDecode(body);
   }
 
   getStatus() async {
