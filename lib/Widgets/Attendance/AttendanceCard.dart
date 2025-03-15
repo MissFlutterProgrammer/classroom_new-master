@@ -103,14 +103,14 @@ class _AttendanceCardState extends State<AttendanceCard>
                         ),
                       ),
                       SizedBox(height: 10),
-                      // Text(
-                      //   "${widget.endtime}",
-                      //   style: TextStyle(
-                      //     color: Colors.black,
-                      //     fontWeight: FontWeight.bold,
-                      //     fontSize: 12,
-                      //   ),
-                      // ),
+                      Text(
+                        widget.date,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
                     ],
                   ),
                   Column(

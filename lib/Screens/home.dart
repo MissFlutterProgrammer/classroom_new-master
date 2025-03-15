@@ -147,7 +147,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         return Scaffold(
           key: scaffoldKey,
           drawer: Drawer(
-            elevation: 0,
+            elevation: 5,
             child: MainDrawer(),
           ),
           appBar: CommonAppBar(

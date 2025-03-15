@@ -10,6 +10,7 @@ import 'package:randomizer_null_safe/randomizer_null_safe.dart';
 import 'package:school_management/Screens/Exam/constant.dart';
 import 'package:school_management/Screens/Exam/upload.dart';
 import 'package:school_management/Widgets/AppBar.dart';
+import 'package:school_management/Widgets/BouncingButton.dart';
 import 'package:school_management/Widgets/Exams/SubjectCard.dart';
 import 'package:school_management/Widgets/MainDrawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -220,12 +221,15 @@ class _ExamResultState extends State<ExamResult>
                             } else {
                               print('data: ${snap.data}');
                             }
-                            // SizedBox(height: 20);
+                            SizedBox(height: 20);
                             return InkWell(
                               child: SubjectCard(
                                 subjectname: 'Subject subject,name',
                                 mark: '',
                                 link: '',
+                                grade: '',
+                                date: '',
+                                time: '',
                               ),
                               onTap: () {
                                 showDialog(
@@ -257,49 +261,49 @@ class _ExamResultState extends State<ExamResult>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Row(
-                        //   children: [
-                        //     Transform(
-                        //       transform: Matrix4.translationValues(
-                        //           muchDelayedAnimation.value * width, 0, 0),
-                        //       child: Text(
-                        //         "Total Marks:",
-                        //         style: TextStyle(
-                        //           fontSize: 15,
-                        //           //fontWeight: FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ),
-                        //     SizedBox(
-                        //       width: height * 0.03,
-                        //     ),
-                        //     // Transform(
-                        //     //   transform: Matrix4.translationValues(
-                        //     //       delayedAnimation.value * width, 0, 0),
-                        //     //   child: Text(
-                        //     //     "490/500",
-                        //     //     style: TextStyle(
-                        //     //       fontSize: 15,
-                        //     //       fontWeight: FontWeight.bold,
-                        //     //     ),
-                        //     //   ),
-                        //     // ),
-                        //   ],
-                        // ),
+                        Row(
+                          children: [
+                            Transform(
+                              transform: Matrix4.translationValues(
+                                  muchDelayedAnimation.value * width, 0, 0),
+                              child: Text(
+                                "Total Marks:",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  //fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: height * 0.03,
+                            ),
+                            Transform(
+                              transform: Matrix4.translationValues(
+                                  delayedAnimation.value * width, 0, 0),
+                              child: Text(
+                                "490/500",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         SizedBox(width: 5),
                         Row(
                           children: [
-                            // Transform(
-                            //   transform: Matrix4.translationValues(
-                            //       muchDelayedAnimation.value * width, 0, 0),
-                            //   child: Text(
-                            //     "Overall Grade:",
-                            //     style: TextStyle(
-                            //       fontSize: 15,
-                            //       //fontWeight: FontWeight.bold,
-                            //     ),
-                            //   ),
-                            // ),
+                            Transform(
+                              transform: Matrix4.translationValues(
+                                  muchDelayedAnimation.value * width, 0, 0),
+                              child: Text(
+                                "Overall Grade:",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  //fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                             SizedBox(
                               width: height * 0.03,
                             ),
@@ -319,7 +323,7 @@ class _ExamResultState extends State<ExamResult>
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 13.0),
+                      padding: const EdgeInsets.only(top: 13),
                       child: Row(
                         children: [
                           Transform(
@@ -329,92 +333,93 @@ class _ExamResultState extends State<ExamResult>
                               "Result: ",
                               style: TextStyle(
                                 fontSize: 15,
-                                //fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
                           SizedBox(
                             width: height * 0.03,
                           ),
-                          // Transform(
-                          //   transform: Matrix4.translationValues(
-                          //       delayedAnimation.value * width, 0, 0),
-                          //   child: Text(
-                          //     "Pass",
-                          //     style: TextStyle(
-                          //       fontSize: 15,
-                          //       fontWeight: FontWeight.bold,
-                          //     ),
-                          //   ),
-                          // ),
+                          Transform(
+                            transform: Matrix4.translationValues(
+                                delayedAnimation.value * width, 0, 0),
+                            child: Text(
+                              "Pass",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.fromLTRB(0, 18, 0, 5),
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    //     children: [
-                    //       Transform(
-                    //         transform: Matrix4.translationValues(
-                    //             muchDelayedAnimation.value * width, 0, 0),
-                    //         child: Bouncing(
-                    //           onPress: () {},
-                    //           child: Container(
-                    //             decoration: BoxDecoration(
-                    //                 color: Colors.blue,
-                    //                 borderRadius: BorderRadius.circular(3),
-                    //                 boxShadow: [
-                    //                   BoxShadow(
-                    //                     color: Colors.black26,
-                    //                   ),
-                    //                 ]),
-                    //             child: Padding(
-                    //               padding: const EdgeInsets.all(8),
-                    //               child: Text(
-                    //                 "Save",
-                    //                 style: TextStyle(
-                    //                   fontSize: 15,
-                    //                   color: Colors.white,
-                    //                   fontWeight: FontWeight.bold,
-                    //                 ),
-                    //               ),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //       Transform(
-                    //         transform: Matrix4.translationValues(
-                    //             delayedAnimation.value * width, 0, 0),
-                    //         child: Bouncing(
-                    //           onPress: () {},
-                    //           child: Container(
-                    //             decoration: BoxDecoration(
-                    //                 color: Colors.blue,
-                    //                 borderRadius: BorderRadius.circular(3),
-                    //                 boxShadow: [
-                    //                   BoxShadow(
-                    //                     color: Colors.black26,
-                    //                   ),
-                    //                 ]),
-                    //             child: Padding(
-                    //               padding: const EdgeInsets.all(8),
-                    //               child: Text(
-                    //                 "Share",
-                    //                 style: TextStyle(
-                    //                   color: Colors.white,
-                    //                   fontSize: 15,
-                    //                   fontWeight: FontWeight.bold,
-                    //                 ),
-                    //               ),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //
-                    //     ],
-                    //   ),
-                    // ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 18, 0, 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Transform(
+                            transform: Matrix4.translationValues(
+                                muchDelayedAnimation.value * width, 0, 0),
+                            child: Bouncing(
+                              onPress: () {},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(3),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Text(
+                                    "Save",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Transform(
+                            transform: Matrix4.translationValues(
+                                delayedAnimation.value * width, 0, 0),
+                            child: Bouncing(
+                              onPress: () {},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(3),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Text(
+                                    "Share",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     SizedBox(
                       height: height * 0.20,
                     ),

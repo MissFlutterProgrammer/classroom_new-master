@@ -30,7 +30,7 @@ class _AttendanceState extends State<Attendance>
         },
       ),
       drawer: Drawer(
-        elevation: 0,
+        elevation: 5,
         child: MainDrawer(),
       ),
       body: SingleChildScrollView(

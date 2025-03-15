@@ -46,9 +46,7 @@ class _NotificationsState extends State<Notifications> {
             if (snap.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
             } else {
-              SizedBox(
-                height: 20,
-              );
+              SizedBox(height: 20);
             }
             return ListView.builder(
               itemCount: (data as List).length,

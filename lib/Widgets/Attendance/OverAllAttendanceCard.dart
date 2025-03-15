@@ -77,8 +77,8 @@ class _OverallAttendanceCardState extends State<OverallAttendanceCard>
                   BoxShadow(
                     color: Colors.black26,
                     offset: Offset(0, 3),
-                    //blurRadius: 3,
-                    //spreadRadius: 1,
+                    blurRadius: 3,
+                    spreadRadius: 1,
                   ),
                 ],
                 borderRadius: BorderRadius.circular(10),

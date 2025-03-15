@@ -54,14 +54,22 @@ class _MyHomePageState extends State<MyHomePage>
     _delayedAnimation = Tween<double>(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
+        curve: const Interval(
+          0.5,
+          1.0,
+          curve: Curves.fastOutSlowIn,
+        ),
       ),
     );
 
     _muchDelayedAnimation = Tween<double>(begin: -1.0, end: 0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.8, 1.0, curve: Curves.fastOutSlowIn),
+        curve: const Interval(
+          0.8,
+          1.0,
+          curve: Curves.fastOutSlowIn,
+        ),
       ),
     );
 
@@ -223,7 +231,9 @@ class _MyHomePageState extends State<MyHomePage>
           color: Colors.grey,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.green),
+          borderSide: BorderSide(
+            color: Colors.green,
+          ),
         ),
       ),
     );
