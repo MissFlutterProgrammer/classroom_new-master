@@ -62,7 +62,7 @@ class _OverallAttendanceCardState extends State<OverallAttendanceCard>
       animation: animationController,
       builder: (BuildContext context, Widget? child) {
         return Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+          padding: const EdgeInsets.only(top: 8),
           child: Transform(
             transform:
                 Matrix4.translationValues(delayedAnimation.value * width, 0, 0),

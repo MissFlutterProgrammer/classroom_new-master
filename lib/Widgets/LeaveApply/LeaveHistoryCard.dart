@@ -56,7 +56,7 @@ class LeaveHistoryCard extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(4.0),
+                padding: const EdgeInsets.all(4),
                 child: Text(
                   "Apply date - $adate",
                   style: TextStyle(

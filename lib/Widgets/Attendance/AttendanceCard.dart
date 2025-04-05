@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class AttendanceCard extends StatefulWidget {
   final String date;
 
-  // final String subject;
   final String staff;
   final bool attendance;
 
