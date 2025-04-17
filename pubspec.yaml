@@ -35,7 +35,7 @@ dependencies:
   intl: any
   async: any
   path: any
-  flutter_pdfview: ^1.4.0
+  flutter_pdfview: ^1.4.0+1
   flutter_downloader: ^1.12.0
 
 dev_dependencies:
