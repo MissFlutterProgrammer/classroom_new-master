@@ -20,7 +20,7 @@ dependencies:
   date_field: any
   fzregex: ^2.1.1
   firebase_core: ^3.13.0
-  flutter_svg: ^2.0.17
+  flutter_svg: ^2.1.0
   flare_flutter: ^3.0.2
   randomizer_null_safe: ^0.1.5
   flrx_validator: ^0.6.0
@@ -30,7 +30,7 @@ dependencies:
   select_form_field: ^2.2.0
   url_launcher: ^6.3.1
   photo_view: ^0.15.0
-  webview_flutter: ^4.10.0
+  webview_flutter: ^4.11.0
   pdf: ^3.11.3
   intl: any
   async: any
